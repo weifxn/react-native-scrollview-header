@@ -1,8 +1,8 @@
 # React Native ScrollView Header
 
-[![npm (scoped)](https://img.shields.io/badge/react--native--scrollview--header-v1.0.1-green.svg)](https://github.com/weifxn/react-native-scrollview-header)
+[![npm (scoped)](https://img.shields.io/badge/react--native--scrollview--header-v1.0.4-green.svg)](https://github.com/weifxn/react-native-scrollview-header)
 
-_an Animated ScrollView Header for React Native_
+_Animated ScrollView Header for React Native_
 
 <img src="https://github.com/weifxn/react-native-scrollview-header/blob/master/img/img.gif" width="300">
 
@@ -10,6 +10,10 @@ _an Animated ScrollView Header for React Native_
 
 ```bash
 $ npm install react-native-scrollview-header
+```
+_or_
+```bash
+$ yarn add react-native-scrollview-header
 ```
 
 ## Usage
