@@ -1,6 +1,6 @@
 # React Native ScrollView Header
 
-[![npm (scoped)](https://img.shields.io/badge/react--native--scrollview--header-v1.0.4-green.svg)](https://github.com/weifxn/react-native-scrollview-header)
+[![npm (scoped)](https://img.shields.io/badge/react--native--scrollview--header-v1.0.6-green.svg)](https://github.com/weifxn/react-native-scrollview-header)
 
 _Animated ScrollView Header for React Native_
 

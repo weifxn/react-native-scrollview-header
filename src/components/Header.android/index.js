@@ -53,7 +53,7 @@ export default class ScrollViewHeader extends Component {
       titleStyle,
       children,
       extras,
-      ,,,rest
+      ...rest
     } = this.props;
 
     const {
