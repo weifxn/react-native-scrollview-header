@@ -1,15 +1,12 @@
 {
-	"name": "react-native-scrollview-header",
-	"version": "1.0.0",
-	"author": {
-    	"name": "weifxn"
-  	},
-  	"dependencies": {
-    	"react": "16.5.0",
-    	"react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-	},
-	"moduleDirectories": [
-      "<rootDir>/node_modules",
-      "<rootDir>/src"
-    ]
+  "name": "react-native-scrollview-header",
+  "version": "1.0.0",
+  "author": {
+    "name": "weifxn"
+  },
+  "dependencies": {
+    "react": "16.5.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
+  },
+  "moduleDirectories": ["<rootDir>/node_modules", "<rootDir>/src"]
 }
