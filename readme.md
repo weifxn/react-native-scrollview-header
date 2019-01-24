@@ -4,7 +4,7 @@
 
 _an Animated ScrollView Header for React Native_
 
-<img src="https://github.com/weifxn/react-native-scrollview-header/blob/master/img/img.gif" width="150">
+<img src="https://github.com/weifxn/react-native-scrollview-header/blob/master/img/img.gif" width="300">
 
 ## Installation
 
