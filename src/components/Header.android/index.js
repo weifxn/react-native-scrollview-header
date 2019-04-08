@@ -13,7 +13,7 @@ import {
 import PropTypes from 'prop-types';
 
 const HEADER_MAX_HEIGHT = 130;
-const HEADER_MIN_HEIGHT = 95;
+const HEADER_MIN_HEIGHT = 10;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
 
 export default class ScrollViewHeader extends Component {
@@ -36,7 +36,7 @@ export default class ScrollViewHeader extends Component {
     super(props);
 
     this.state = {
-      scrollY: new Animated.Value(-HEADER_MAX_HEIGHT),
+      scrollY: new Animated.Value(0),
       HEADER_MAX_HEIGHT: this.props.maxHeight,
       HEADER_MIN_HEIGHT: this.props.minHeight,
       HEADER_SCROLL_DISTANCE: this.props.maxHeight - this.props.minHeight,
@@ -62,10 +62,10 @@ export default class ScrollViewHeader extends Component {
       HEADER_SCROLL_DISTANCE,
     } = this.state;
 
-    const scrollY = Animated.add(this.state.scrollY, HEADER_MAX_HEIGHT);
+    const scrollY = Animated.add(this.state.scrollY, 0);
 
     const barOpacity = this.state.scrollY.interpolate({
-      inputRange: [-100, -80],
+      inputRange: [0, 20],
       outputRange: [0, 1],
       extrapolate: 'clamp',
     });
@@ -82,7 +82,7 @@ export default class ScrollViewHeader extends Component {
     return (
       <View style={{ flex: 1 }}>
         <Animated.ScrollView
-          style={{ flex: 1 }}
+          style={{ flex: 1, marginTop: 120 }}
           scrollEventThrottle={1}
           onScroll={Animated.event(
             [{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }],
@@ -99,16 +99,6 @@ export default class ScrollViewHeader extends Component {
           {children}
         </Animated.ScrollView>
 
-        <Animated.View
-          pointerEvents="none"
-          style={[
-            styles.bar,
-            barStyle,
-            {
-              opacity: barOpacity,
-            },
-          ]}
-        />
         <Animated.View
           style={[
             styles.header,
@@ -131,25 +121,18 @@ export default class ScrollViewHeader extends Component {
 
 const styles = StyleSheet.create({
   bar: {
+    zIndex: 0,
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
     backgroundColor: 'black',
     height: 95,
-    ...Platform.select({
-      ios: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 10 },
-        shadowOpacity: 0.5,
-        shadowRadius: 15,
-      },
-      android: {
-        elevation: 5,
-      },
-    }),
+    elevation: 5,
+      
   },
   header: {
+    zIndex: 1,
     backgroundColor: 'transparent',
     marginTop: 50,
     alignItems: 'center',
@@ -160,8 +143,10 @@ const styles = StyleSheet.create({
     right: 0,
   },
   title: {
+    zIndex: 1,
     color: 'white',
     padding: 8,
     fontSize: 28,
+    elevation: 6,
   },
 });
